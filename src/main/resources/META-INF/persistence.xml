@@ -6,9 +6,9 @@
         <class>model.Customer</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
-            <property name="javax.persistence.jdbc.url"    value="jdbc:postgresql://localhost:5432/test" />
-            <property name="javax.persistence.jdbc.user" value="schueler" />
-            <property name="javax.persistence.jdbc.password" value="schueler" />
+            <property name="javax.persistence.jdbc.url"    value="jdbc:postgresql://10.128.6.18:5432/db_4bhif_06_labor11" />
+            <property name="javax.persistence.jdbc.user" value="user_4bhif_06_hn" />
+            <property name="javax.persistence.jdbc.password" value="20020904" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL92Dialect"/>
             <property name="hibernate.hbm2ddl.auto" value="create" />
             <property name="hibernate.show_sql" value="true"/>

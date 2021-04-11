@@ -5,24 +5,19 @@ import javax.persistence.Persistence;
 
 public class JPAUtil {
 
-    private static final EntityManagerFactory EMF;
+    private static EntityManagerFactory emf;
 
-    static {
-        try {
-            EMF = Persistence.createEntityManagerFactory("jpa-test-unit");
-        } catch (Exception ex) {
-            System.err.println("EntityManagerFactory creation failed: " + ex);
-            throw new ExceptionInInitializerError(ex);
+    public static EntityManagerFactory getEMF(String persistenceUnit) {
+        if(emf == null) {
+            emf = Persistence.createEntityManagerFactory(persistenceUnit);
         }
-    }
-
-    public static EntityManagerFactory getEMF() {
-        return EMF;
+        return emf;
     }
 
     public static void close() {
-        if (EMF.isOpen()) {
-            EMF.close();
+        if (emf.isOpen()) {
+            emf.close();
+            emf = null;
         }
     }
 
